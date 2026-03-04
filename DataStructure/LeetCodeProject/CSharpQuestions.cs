@@ -27,5 +27,28 @@
     Singleton : 單例, 從程式啟動到結束 只會有一個實例. ex : catche service 快取服務. 
     Scoped : 範圍, 在同一個 HTTP Request 內共用同一個實例
     Transient :　順時, 每次注入時都產生一個新的實例. ex : 
-  
+
+  6. LRU Catche => Least Recently Used
+     Dictionary + Doubly Linked List
+     為什麼要雙向不能單向 雙向可以知道前後是什麼只需要 O(1), 只有單向 還是O(n)
+
+     public class Node 
+     {
+       public int Key;
+       public int Value;
+       public Node Prev;
+       public Node Next;
+     }
+
+     如何取出
+     1. 前一個對接後一個 兩頭都要給定
+     node.Prev.Next = node.Next;
+     node.Next.Prev = node.Prev;
+
+     2. 移至頭部
+     node.Next = Head.Next;
+     node.Prev = Head;
+
+     node.Next.Prev = node;
+     Head.Next = node;
 */
