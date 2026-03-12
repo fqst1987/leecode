@@ -200,7 +200,7 @@ using System.Collections.Generic;
             ListNode slow = dummy;
 
             // Fast 先走 n 步
-            for (int i = 0; i <= n; i++) fast = fast.next;
+            for (int i = 0; i < n; i++) fast = fast.next;
 
             // 同時走，直到 Fast 到底
             while (fast != null) {
