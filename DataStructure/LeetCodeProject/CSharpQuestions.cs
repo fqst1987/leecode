@@ -9,7 +9,7 @@
   2. interface 與 abstract 的差異
     特性	  抽象類別 (Abstract Class)	介面 (Interface)
     關鍵字	  abstract	                interface
-    本質	是一個類別 (Class)	是一個合約 (Contract)
+    本質	  是一個類別 (Class)	        是一個合約 (Contract)
     繼承限制	單一繼承 (只能繼承一個類別)	多重實作 (可以實作多個介面)
     成員內容	可以有欄位、建構子、實作邏輯	只能定義簽章（C# 8.0 後可有預設實作，但不建議濫用）
     存取修飾詞	可以是 public, protected, private 等	預設通常是 public
@@ -18,15 +18,20 @@
     abstract : 定義身分和共用邏輯
     interface : 定義合約和行為規範
 
-  3. Restful API 的定義 :
+  3. Restful API 的定義 : 
 
   4. SOLID 原則 : 
+       S : Single Responsibility => 一個類別應該只做一件事
+       O : Open-Closed Principle => 對擴充開放, 對修改封閉 => 需求增加時，應該寫新的方法, 不去改舊的
+       L : Liskov Substitution Principle => 繼承的子類不能破壞父類原有的功能 => 不能完全繼承使用父類的東西, 改用介面
+       I : Interface Segregation Principle => 介面不要設計的太萬用
+       D : Dependency Inversion Principle => Controller 不要依賴 Service => Controller 注入 Service
 
   5. Singleton, Scoped, Transient 的差異 :
     生命週期 : 
     Singleton : 單例, 從程式啟動到結束 只會有一個實例. ex : catche service 快取服務. 
     Scoped : 範圍, 在同一個 HTTP Request 內共用同一個實例
-    Transient :　順時, 每次注入時都產生一個新的實例. ex : 
+    Transient :　順時, 每次注入時都產生一個新的實例. ex : 取號器
 
   6. LRU Catche => Least Recently Used
      Dictionary + Doubly Linked List
@@ -51,4 +56,7 @@
 
      node.Next.Prev = node;
      Head.Next = node;
+
+  7. xUnit 單元測試架構
+    
 */
